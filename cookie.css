@@ -1,0 +1,158 @@
+/** Hier beginnen die Cookies **/
+
+.cookie-consent {
+	z-index: 99;
+	position: fixed;
+	max-width: 22rem;
+	left: 6.5rem;
+	bottom: 25px;
+	.cookie-button {
+	  transition: all 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
+	  transform: scale(0) rotate(-200deg);
+	  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+	  background-size: cover;
+	  background-color: #ddaa65;
+	  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MCA2MCI+PGRlZnM+PHN0eWxlPi5ie2ZpbGw6Izg0M308L3N0eWxlPjwvZGVmcz48Y2lyY2xlIGN4PSIzMCIgY3k9IjMwIiByPSIzMCIgZmlsbD0iI2RkYWE2NSIgR29vZ2w9InRydWUiLz48Y2lyY2xlIGNsYXNzPSJiIiBjeD0iMTUuNSIgY3k9IjIxLjUiIHI9IjMuNSIvPjxjaXJjbGUgY2xhc3M9ImIiIGN4PSIzNC41IiBjeT0iMTIuNSIgcj0iMy41Ii8+PGNpcmNsZSBjbGFzcz0iYiIgY3g9IjIwLjUiIGN5PSI0NS41IiByPSIzLjUiLz48Y2lyY2xlIGNsYXNzPSJiIiBjeD0iMzcuNSIgY3k9IjUzLjUiIHI9IjMuNSIvPjxjaXJjbGUgY2xhc3M9ImIiIGN4PSI0OC41IiBjeT0iMzguNSIgcj0iMy41Ii8+PGNpcmNsZSBjbGFzcz0iYiIgY3g9IjM0IiBjeT0iMzMiIHI9IjYiLz48L3N2Zz4=");
+	  border-radius: 50%;
+	  position: fixed;
+	  bottom: 25px;
+	  left: 25px;
+	  height: 60px;
+	  width: 60px;
+	}
+	.cookie-popin {
+	  &::before {
+		height: 2.4rem;
+		width: 1.4rem;
+		left: 0;
+		bottom: 0.7rem;
+	  }
+	  z-index:99;
+	  position: relative;
+	  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+	  border-radius: 0.5rem;
+	  background: #fff;
+	  padding: 1rem 1.75rem;
+	  transform: scale(0);
+	  transition: transform 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+	  .title {
+		font-weight: 900;
+		font-size: 1.4rem;
+		color: #333;
+	  }
+	  .description {
+		font-size: 0.8rem;
+		margin-bottom: 0.9rem;
+		color: #999;
+		a {
+		  color: #f6a813;
+		}
+	  }
+	  .user-choice {
+		/*&::after {
+		  z-index: -1;
+		  content: "";
+		  border-top-right-radius: 0.2rem;
+		  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+		  position: absolute;
+		  height: 1.3rem;
+		  width: 1.3rem;
+		  background: #fff;
+		  left: 1.8rem;
+		  margin-top: 1rem;
+		  transform: rotate(45deg);
+		  z-index: -1;
+		  left: -0.6rem;
+		}*/
+		.auth-button {
+		  user-select: none;
+		  text-align: center;
+		  text-transform: uppercase;
+		  background-color: #292e49;
+		  color: #fff;
+		  padding: 0.4rem 1rem;
+		  border-radius: 0.2rem;
+		  display: inline-block;
+		  cursor: pointer;
+		  box-shadow: 0 0.18rem 0.3rem 0.05rem rgba(0, 0, 0, 0.2);
+		  font-size: 0.7rem;
+		  &-light {
+			background-color: #fff;
+			color: #292e49;
+		  }
+		}
+	  }
+	}
+	
+	&.-deploy {
+	  .cookie-button {
+		transform: scale(1) rotate(0);
+	  }
+	  .cookie-popin {
+		transform: scale(1);
+	  }
+	}
+  }
+
+   /* The switch - the box around the slider */
+   .switch {
+	position: relative;
+	display: inline-block;
+	width: 30px;
+	height: 17px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	-webkit-transition: .4s;
+	transition: .4s;
+  }
+  
+  .slider:before {
+	position: absolute;
+	content: "";
+	height: 13px;
+	width: 13px;
+	left: 2px;
+	bottom: 2px;
+	background-color: white;
+	-webkit-transition: .4s;
+	transition: .4s;
+  }
+  
+  input:checked + .slider {
+	background-color: #f6a813;
+  }
+  
+  input:focus + .slider {
+	box-shadow: 0 0 1px #f6a813;
+  }
+  
+  input:checked + .slider:before {
+	-webkit-transform: translateX(13px);
+	-ms-transform: translateX(13px);
+	transform: translateX(13px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+	border-radius: 17px;
+  }
+  
+  .slider.round:before {
+	border-radius: 50%;
+  }
